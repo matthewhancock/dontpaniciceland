@@ -1,0 +1,86 @@
+﻿<%@ Master Language="VB" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+    Const SelectedCSSClass As String = "selected"
+    Public WriteOnly Property SelectedPage As DontPanicFilms.PageOption
+        Set(ByVal value As DontPanicFilms.PageOption)
+            Select Case value
+                Case DontPanicFilms.PageOption.About
+                    Me.linkAbout.Attributes.Add("class", SelectedCSSClass)
+                    Me.content.Attributes.Add("class", "about")
+                Case DontPanicFilms.PageOption.Contact
+                    Me.linkContact.Attributes.Add("class", SelectedCSSClass)
+                    Me.content.Attributes.Add("class", "contact")
+                Case DontPanicFilms.PageOption.News
+                    Me.linkNews.Attributes.Add("class", SelectedCSSClass)
+                    Me.content.Attributes.Add("class", "news")
+                Case DontPanicFilms.PageOption.Store
+                    Me.linkStore.Attributes.Add("class", SelectedCSSClass)
+                    Me.content.Attributes.Add("class", "store")
+                'Case DontPanicFilms.PageOption.Workshops
+                '    Me.linkWorkshops.Attributes.Add("class", SelectedCSSClass)
+                '    Me.content.Attributes.Add("class", "workshops")
+                Case DontPanicFilms.PageOption.TV
+                    Me.linkTV.Attributes.Add("class", SelectedCSSClass)
+                    Me.content.Attributes.Add("class", "tv")
+                Case DontPanicFilms.PageOption.Video
+                    Me.linkVideo.Attributes.Add("class", SelectedCSSClass)
+                    Me.content.Attributes.Add("class", "video")
+                Case DontPanicFilms.PageOption.Home
+                    Me.content.Attributes.Add("class", "home")
+            End Select
+        End Set
+    End Property
+    Private Sub RefreshLinks()
+        Me.linkAbout.Attributes.Remove("class")
+        Me.linkContact.Attributes.Remove("class")
+        Me.linkNews.Attributes.Remove("class")
+        Me.linkStore.Attributes.Remove("class")
+        'Me.linkWorkshops.Attributes.Remove("class")
+        Me.linkTV.Attributes.Remove("class")
+        Me.linkVideo.Attributes.Remove("class")
+    End Sub
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="_css/this.css?v=5" rel="stylesheet" type="text/css" />
+    <script src="<%= ResolveClientUrl("~/_js/this.js?v=5") %>" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/607958/786322/css/fonts.css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="content" runat="server">
+            <aside id="leftnav">
+            </aside><section id="main">
+                <asp:ContentPlaceHolder id="ContentMain" runat="server" />
+            </section>
+        </div>
+
+<div id="logo">&nbsp;</div>
+<div id="nav_border">&nbsp;</div>
+<nav id="nav" class="collapsed">
+    <a id="nav-burger" href="javascript:;" onclick="burger_click()"></a>
+    <a id="linkNews" href="/News/" runat="server" title="News & Updates" data-page="news" onclick="return link(this)">News
+    </a><a id="linkAbout" href="/About/" runat="server" title="About Don't Panic" data-page="about" onclick="return link(this)">About Us
+    </a><a id="linkVideo" href="/Video/" runat="server" title="Film & Music Video" data-page="video" onclick="return link(this)">Film & Video
+    </a><a id="linkTV" href="/TV/" runat="server" title="DontPanicTV" data-page="tv" onclick="return link(this)">DontPanicTV
+    </a><a id="linkStore" href="/Store/" runat="server" title="Store" data-page="store" onclick="return link(this)">Store
+    </a><a id="linkContact" href="/Contact/" runat="server" title="Contact Us" data-page="contact" onclick="return link(this)">Contact</a></nav>
+
+    </form>
+    <div id="background-2">&nbsp;</div>
+    <div id="background-3">&nbsp;</div>
+    <div id="meshNet-div" class="hide"></div>
+    <script type="text/javascript">
+        meshNet.path = "<%= DontPanicFilms.Path%>";
+        meshNet.External.Facebook.applicationID = "178043225554946";
+        meshNet.load();
+    </script>
+</body>
+</html>
