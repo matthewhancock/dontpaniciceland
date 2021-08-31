@@ -226,11 +226,8 @@ background-image:url('../_images/bg5.jpg');
 /*mobile burger*/
 a#nav-burger{display:none}
 
-@media (max-device-width : 1024px) and (max-device-width : 1024px), (-webkit-min-device-pixel-ratio: 1.5) {
-    body{}
-iframe{display:block;
-max-width:100%;
-max-height:100%;}
+@media only screen and (max-device-width: 1024px) {
+    iframe{display:block;max-width:100%;max-height:100%;}
     #content{z-index:98;width:calc(100% - 50px);min-width:initial;height:100%;max-width:initial;top:auto;overflow:auto;background:none !important}
     #leftnav{display:none}
     #logo{position:fixed;bottom:0;right:0;width:100%;min-width:initial;max-width:initial;height:100px;min-height:initial;max-height:20%;background-size:contain;background-repeat:no-repeat;background-position:center;background-image:url('../_images/_dpf.png');background-color:rgba(0,0,0,.8)}
@@ -256,10 +253,4 @@ max-height:100%;}
     #contact-table, #contact-table .cell {display:block}
     #contact-table .cell {margin-top:24px;text-align:center}
     #contact-table .cell.pr {padding:0}
-}
-@media (device-height : 568px) 
-   and (device-width : 320px) 
-   and (-webkit-min-device-pixel-ratio: 2)
- and (orientation : landscape) {
-    /*body{color:green}*/
 }
