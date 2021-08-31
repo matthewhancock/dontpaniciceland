@@ -84,9 +84,9 @@ function launchVideo(id, title, playerType, height) {
     var i = document.createElement("iframe");
     var src;
     if (playerType = "vimeo") {
-        src = "http://player.vimeo.com/video/" + id + "?title=0&byline=0&portrait=0&color=7f9fb8";
+        src = "https://player.vimeo.com/video/" + id + "?title=0&byline=0&portrait=0&color=7f9fb8";
     } else {
-        src = "http://www.youtube.com/embed/" + id;
+        src = "https://www.youtube.com/embed/" + id;
     }
     i.src = src; i.style.border = "none"; i.style.width = "1200px"; i.style.height = (height ? height : "675") + "px";
     p.appendChild(i);

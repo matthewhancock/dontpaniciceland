@@ -25,8 +25,8 @@ a.feature{text-transform:uppercase;color:#6592a2/*94abc6*/;text-decoration:none;
 a.feature:hover{text-decoration:underline;color:#6592a2/*94abc6*/}
 
 #container{height:100%;width:100%}
-#nav{position:fixed;bottom:7% /*75px*/;right:0;z-index:97;width:calc(100% - 500px);min-width:70%;transform: rotate(-2deg);-webkit-transform:rotate(-2deg);-ms-transform:rotate(-2deg);width:calc(100% - 500px)}
-#nav a{width:14%;display:inline-block;text-align:center;color:#fff;font-size:18px;padding:5px 0;text-transform:uppercase;text-decoration:none}
+#nav{display:flex;position:fixed;bottom:7%;right:0;z-index:97;width:calc(100% - 500px);min-width:70%;transform: rotate(-2deg);-webkit-transform:rotate(-2deg);-ms-transform:rotate(-2deg);width:calc(100% - 500px)}
+#nav a{flex:1;width:14%;display:inline-block;text-align:center;color:#fff;font-size:18px;padding:5px 0;text-transform:uppercase;text-decoration:none}
 #nav a:hover{text-decoration:underline}
 #nav_border{position:fixed;bottom:calc(7% + 35px) /*90px*/;right:0;z-index:97;background-color:rgba(255,255,255,.25);transform: rotate(-2deg);-webkit-transform:rotate(-2deg);-ms-transform:rotate(-2deg);width:calc(100% - 150px);min-width:85%;height:20px;max-height:6%}
 
@@ -240,9 +240,9 @@ a#nav-burger{display:none}
     .tv #main{background-image:url('../_images/_h-dptv.png')}
     .video #main{background-image:url('../_images/_h-film.png')}
 
-    #nav {position:fixed;top:0;left:0;right:auto;bottom:auto;background-color:rgba(0,0,0,.8);transform:none;-webkit-transform:none;-ms-transform:none;z-index:99;min-width:initial;max-width:calc(100% - 50px);width:initial;min-height:initial;max-height:calc(100% - 70px);height:auto;display:inline-block;padding:35px 50px 35px 0;overflow:auto}
+    #nav {flex-direction:column;position:fixed;top:0;left:0;right:auto;bottom:auto;background-color:rgba(0,0,0,.8);transform:none;-webkit-transform:none;-ms-transform:none;z-index:99;min-width:initial;max-width:calc(100% - 50px);width:initial;min-height:initial;max-height:calc(100% - 70px);height:auto;display:inline-block;padding:35px 50px 35px 0;overflow:auto}
     #nav.collapsed{right:calc(100% - 45px);left:auto}
-    #nav a {display:inline-block;padding:10px;text-align:left;font-size:16px;float:left;clear:both;width:auto}
+    #nav a {display:inline-block;padding:10px;text-align:left;font-size:16px;clear:both;width:auto}
     #nav_border{display:none}
     a#nav-burger{display:block;position:absolute;width:35px;height:35px;right:5px;top:5px;background-image:url('../_images/icon-arrow.png');background-position:0 -35px;background-size:35px;padding:0;margin:0}
     .collapsed a#nav-burger {background-position:0 0;background-size:35px}

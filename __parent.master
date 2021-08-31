@@ -13,9 +13,6 @@
                 Case DontPanicFilms.PageOption.Contact
                     Me.linkContact.Attributes.Add("class", SelectedCSSClass)
                     Me.content.Attributes.Add("class", "contact")
-                Case DontPanicFilms.PageOption.News
-                    Me.linkNews.Attributes.Add("class", SelectedCSSClass)
-                    Me.content.Attributes.Add("class", "news")
                 Case DontPanicFilms.PageOption.Store
                     Me.linkStore.Attributes.Add("class", SelectedCSSClass)
                     Me.content.Attributes.Add("class", "store")
@@ -36,7 +33,6 @@
     Private Sub RefreshLinks()
         Me.linkAbout.Attributes.Remove("class")
         Me.linkContact.Attributes.Remove("class")
-        Me.linkNews.Attributes.Remove("class")
         Me.linkStore.Attributes.Remove("class")
         'Me.linkWorkshops.Attributes.Remove("class")
         Me.linkTV.Attributes.Remove("class")
@@ -66,8 +62,7 @@
 <div id="nav_border">&nbsp;</div>
 <nav id="nav" class="collapsed">
     <a id="nav-burger" href="javascript:;" onclick="burger_click()"></a>
-    <a id="linkNews" href="/News/" runat="server" title="News & Updates" data-page="news" onclick="return link(this)">News
-    </a><a id="linkAbout" href="/About/" runat="server" title="About Don't Panic" data-page="about" onclick="return link(this)">About Us
+    <a id="linkAbout" href="/About/" runat="server" title="About Don't Panic" data-page="about" onclick="return link(this)">About Us
     </a><a id="linkVideo" href="/Video/" runat="server" title="Film & Music Video" data-page="video" onclick="return link(this)">Film & Video
     </a><a id="linkTV" href="/TV/" runat="server" title="DontPanicTV" data-page="tv" onclick="return link(this)">DontPanicTV
     </a><a id="linkStore" href="/Store/" runat="server" title="Store" data-page="store" onclick="return link(this)">Store
